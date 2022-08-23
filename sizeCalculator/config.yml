@@ -1,9 +1,3 @@
-db:
-  host: ""
-  user: ""
-  password: ""
-  schema: ""
-  charset: "utf8"
 folderPath:
   indiFolder: "/mnt/写真/个人"
   groupFolder: "/mnt/写真/团队"

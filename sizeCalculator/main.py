@@ -13,12 +13,14 @@ def get_dir_size(path, size=0):
 
 with open('config.yml', 'rb') as file:
     conf = yaml.safe_load(file)
+with open('dbconfig.yml', 'rb') as dbFile:
+    dbConf = yaml.safe_load(dbFile)
 todayStr = time.strftime("%Y-%m-%d", time.localtime())
-connect = pymysql.connect(host=conf['db']['host'],
-                          user=conf['db']['user'],
-                          password=conf['db']['password'],
-                          db=conf['db']['schema'],
-                          charset=conf['db']['charset'])
+connect = pymysql.connect(host=dbConf['db']['host'],
+                          user=dbConf['db']['user'],
+                          password=dbConf['db']['password'],
+                          db=dbConf['db']['schema'],
+                          charset=dbConf['db']['charset'])
 cur = connect.cursor()
 
 indiFolderSize = get_dir_size(path=conf['folderPath']['indiFolder'])
