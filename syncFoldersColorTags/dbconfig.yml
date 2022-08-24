@@ -1,0 +1,6 @@
+db:
+  host: ""
+  user: ""
+  password: ""
+  schema: ""
+  charset: "utf8"
