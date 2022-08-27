@@ -12,6 +12,7 @@ def traverse_dir_files(root_dir, ext=None):
                 if name.endswith(tuple(ext)):
                     paths_list.append(os.path.join(parent, name))
                     print(os.path.join(parent, name))
+                    os.remove(os.path.join(parent, name))
             else:
                 paths_list.append(os.path.join(parent, name))
 
