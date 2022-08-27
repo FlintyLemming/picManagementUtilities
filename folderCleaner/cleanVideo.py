@@ -2,7 +2,7 @@ import os
 import yaml
 
 
-# 删除所有以 txt 和 html 后缀的文件
+# 删除所有视频
 def traverse_dir_files(root_dir, ext=None):
     paths_list = []
     for parent, _, fileNames in os.walk(root_dir):
@@ -22,4 +22,4 @@ def traverse_dir_files(root_dir, ext=None):
 
 with open('config.yml', 'rb') as file:
     conf = yaml.safe_load(file)
-traverse_dir_files(conf['targetPath'], ext=["txt", "html"])
+traverse_dir_files(conf['targetPath'], ext=["mp4", "avi", "flv", "mkv"])
